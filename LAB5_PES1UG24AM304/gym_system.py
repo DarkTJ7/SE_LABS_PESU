@@ -6,6 +6,7 @@ from pathlib import Path
 class_capacity = {"Yoga": 3, "HIIT": 2, "Spin": 4}
 rosters = {}
 
+
 def book_class(member_id, class_name, attendance_log=None):
     """Book a unique member into a known class with an available seat."""
     if class_name not in class_capacity:
@@ -23,6 +24,7 @@ def book_class(member_id, class_name, attendance_log=None):
         attendance_log.append(f"{member_id} -> {class_name}")
     return True
 
+
 def cancel_booking(member_id, class_name):
     """Cancel a booking, returning whether a member was removed."""
     try:
@@ -32,6 +34,7 @@ def cancel_booking(member_id, class_name):
         return False
     return True
 
+
 def set_capacity(class_name, seats):
     """Set a non-negative integer capacity without displacing bookings."""
     if isinstance(seats, bool) or not isinstance(seats, int) or seats < 0:
@@ -39,6 +42,7 @@ def set_capacity(class_name, seats):
     if seats < len(rosters.get(class_name, [])):
         raise ValueError("Capacity cannot be smaller than the current roster")
     class_capacity[class_name] = seats
+
 
 def add_members(class_name, count):
     """Attempt to book count new guests, using distinct guest IDs."""
@@ -52,10 +56,12 @@ def add_members(class_name, count):
             break
         guest_number += 1
 
+
 def export_roster(file="gym_schedule.json"):
     """Write the current rosters to a UTF-8 JSON file."""
     with open(file, "w", encoding="utf-8") as roster_file:
         json.dump(rosters, roster_file, indent=2)
+
 
 def clear_old_exports(prefix="old_"):
     """Delete matching JSON files in the current directory without a shell."""
@@ -66,10 +72,12 @@ def clear_old_exports(prefix="old_"):
             if path.is_file() and not path.is_symlink():
                 path.unlink()
 
+
 def show_rosters():
     """Display the members booked into each class."""
     for class_name, members in rosters.items():
         print(class_name, ":", ", ".join(str(member) for member in members))
+
 
 def main():
     """Run the booking demonstration and accept a walk-in guest count."""
@@ -99,6 +107,7 @@ def main():
     clear_old_exports()
     export_roster()
     show_rosters()
+
 
 if __name__ == "__main__":
     main()
