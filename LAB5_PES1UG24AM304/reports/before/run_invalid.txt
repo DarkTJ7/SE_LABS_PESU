@@ -1,0 +1,12 @@
+Class full: Spin
+Class full: Spin
+Class full: Spin
+Nothing to cancel
+How many walk-in guests for HIIT? (Enter for 1): Traceback (most recent call last):
+  File "C:\Users\Tarun\Documents\Codex\2026-10-14\https-github-com-setapesu26-l5-04\outputs\L5_04_fitness_booking\gym_system.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Tarun\Documents\Codex\2026-10-14\https-github-com-setapesu26-l5-04\outputs\L5_04_fitness_booking\gym_system.py", line 53, in main
+    addMembers("HIIT", int(n))
+                       ~~~^^^
+ValueError: invalid literal for int() with base 10: 'abc'

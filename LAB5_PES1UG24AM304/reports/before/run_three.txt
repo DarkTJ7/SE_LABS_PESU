@@ -1,0 +1,11 @@
+Class full: Spin
+Class full: Spin
+Class full: Spin
+Nothing to cancel
+How many walk-in guests for HIIT? (Enter for 1): Class full: HIIT
+Yoga : M1, M2, M3, M4
+HIIT : 55, GUEST-0, GUEST-1
+Pilates : M5
+Spin : 
+'rm' is not recognized as an internal or external command,
+operable program or batch file.
