@@ -1,6 +1,6 @@
 # Identified issues and fixes
 
-Line numbers refer to the unchanged starter in `reports/before/gym_system.py`.
+Line numbers refer to the original starter code before fixes.
 Bandit supplies the High rating below. Other priorities are our assessment;
 Pylint and Flake8 do not assign Bandit's security severity levels.
 
@@ -28,15 +28,13 @@ Pylint and Flake8 do not assign Bandit's security severity levels.
 ## Verification
 
 Analysis target: `gym_system.py`, using default tool settings, without disabled
-rules or `nosec` suppressions. The archived starter is intentionally unchanged.
+rules or `nosec` suppressions. 
 
 | Tool | Before | After |
 |---|---|---|
 | Pylint 4.1.3 | 6.60/10; 16 messages | 10.00/10; no messages |
 | Flake8 7.4.1 | 10 findings | No findings; exit 0 |
 | Bandit 1.9.4 | One High/High-confidence B605 finding | No findings; exit 0 |
-| unittest | No starter tests | 9 passing tests, including 4 CLI input scenarios |
 
-Reports are in `reports/before/` and `reports/after/`; root-level report files
-contain the final results. An empty Flake8 report means no findings. Baseline
+Reports are in `reports/before/` and `reports/after/`; the latter contains the final results. An empty Flake8 report means no findings. Baseline
 runs used temporary directories to isolate the original shell deletion call.
